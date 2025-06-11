@@ -32,8 +32,8 @@ group :development do
   gem 'rails-erd'
 end
 
-group:developement do
-gem 'railroady'
+group :development do
+  gem 'railroady'
 end
 
 
