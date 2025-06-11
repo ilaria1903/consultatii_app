@@ -1,0 +1,2 @@
+module PlataHelper
+end

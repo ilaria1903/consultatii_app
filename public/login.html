@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+
+
+  <meta charset="UTF-8">
+  <title>Autentificare</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+    }
+    input {
+      margin: 5px 0;
+      padding: 8px;
+      width: 250px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+    }
+    #rezultat-login {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Autentificare</h2>
+  <form id="login-form">
+    <input type="email" id="email" placeholder="Email" name="email" required><br>
+    <input type="password"  id="parola" placeholder="Parolă" name="parola" ><br>
+    <button type="submit">Autentifică-te</button>
+  </form>
+
+  <div id="rezultat-login"></div>
+
+    <script src="/js/login.js"></script>
+</body>
+</html>

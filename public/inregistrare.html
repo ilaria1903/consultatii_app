@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Înregistrare</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+    }
+    input {
+      margin: 5px 0;
+      padding: 8px;
+      width: 250px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+    }
+    #mesaj {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Creare cont nou</h2>
+  <form id="register-form">
+    <input type="text" placeholder="CNP" name="cnp" required><br>
+    <input type="email" placeholder="Email" name="email" required><br>
+    <input type="text" placeholder="Nume" name="nume" required><br>
+    <input type="text" placeholder="Prenume" name="prenume" required><br>
+    <input type="date" placeholder="Data nașterii" name="data_nasterii" required><br>
+
+    <input type="password" placeholder="Parolă" name="password" required><br>
+    <input type="password" placeholder="Confirmare parolă" name="password_confirmation" required><br>
+
+    <!-- Rolul este setat automat în backend (pacient), deci nu îl mai cerem -->
+    <button type="submit">Înregistrează-te</button>
+  </form>
+
+  <div id="mesaj"></div>
+
+  <script>
+    // Când formularul cu ID-ul register-form este trimis, această funcție anonimă se execută.
+    document.getElementById('register-form').addEventListener('submit', async function (e) {
+      e.preventDefault(); //Blochează comportamentul implicit al browserului (care ar fi trimis un request HTTP normal și ar fi dat refresh la pagină).
+      const form = e.target;
+      const mesajEl = document.getElementById('mesaj');
+      mesajEl.innerText = '';
+      mesajEl.style.color = 'red';
+
+      if (form.password.value !== form.password_confirmation.value) {
+        mesajEl.innerText = "Parolele nu coincid!";
+        return;
+      }
+
+
+      // Creez un obiect data care conține toate datele introduse în formular, grupate sub cheia utilizator
+      const data = {
+        utilizator: {
+          cnp: form.cnp.value,
+          email: form.email.value,
+          nume: form.nume.value,
+          prenume: form.prenume.value,
+          data_nasterii: form.data_nasterii.value,
+          password: form.password.value,
+          password_confirmation: form.password_confirmation.value
+        }
+      };
+
+      //Trimit un request POST către backend (/utilizatori), în format JSON, cu datele utilizatorului.
+      try {
+        const res = await fetch('http://localhost:3000/utilizatori', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+//astept raspuns server
+        const rezultat = await res.json();
+
+        if (res.ok) {
+          mesajEl.style.color = 'green';
+          mesajEl.innerText = 'Cont creat cu succes!';
+          form.reset();
+        } else {
+          mesajEl.innerText = rezultat.errors?.join(', ') || rezultat.error || 'Eroare necunoscută';
+        }
+      } catch (error) {
+        mesajEl.innerText = "Eroare la conectarea cu serverul.";
+      }
+    });
+  </script>
+</body>
+</html>

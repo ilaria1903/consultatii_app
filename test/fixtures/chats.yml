@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  consultatie_id: 1
+  started_at: 2025-05-03 17:47:18
+  ended_at: 2025-05-03 17:47:18
+
+two:
+  consultatie_id: 1
+  started_at: 2025-05-03 17:47:18
+  ended_at: 2025-05-03 17:47:18

@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  utilizator_id: MyString
+  zi_saptamana: 1
+
+two:
+  utilizator_id: MyString
+  zi_saptamana: 1

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Profil utilizator</title>
+  <script src="/js/profil.js" defer></script>
+  <style>
+    body { font-family: sans-serif; padding: 30px; }
+    .linie { margin-bottom: 10px; }
+    button { margin-top: 20px; padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h2>Profilul tău</h2>
+
+  <div id="info-utilizator">
+    <p class="linie"><strong>Nume:</strong> <span id="nume"></span> <span id="prenume"></span></p>
+    <p class="linie"><strong>Email:</strong> <span id="email"></span></p>
+    <p class="linie"><strong>Rol:</strong> <span id="rol"></span></p>
+    <p class="linie"><strong>Data nașterii:</strong> <span id="nastere"></span></p>
+    
+  </div>
+
+  <button id="btn-setari" onclick="window.location.href = '/setari_profil.html'">⚙️ Setări profil</button>
+
+  <br><br>
+<button id="btn-inapoi" onclick="window.location.href = '/utilizator.html'">⬅️ Înapoi</button>
+
+</body>
+</html>

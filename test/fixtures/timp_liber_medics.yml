@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  utilizator_id: MyString
+  zi: 2025-05-03
+  motiv: MyText
+
+two:
+  utilizator_id: MyString
+  zi: 2025-05-03
+  motiv: MyText

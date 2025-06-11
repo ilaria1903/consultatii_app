@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  programare_id: 1
+  start_time: 2025-05-03 17:45:21
+  end_time: 2025-05-03 17:45:21
+  durata_minute: 1
+
+two:
+  programare_id: 1
+  start_time: 2025-05-03 17:45:21
+  end_time: 2025-05-03 17:45:21
+  durata_minute: 1

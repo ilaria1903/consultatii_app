@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Medic</title>
+  <script src="/js/utilizator_medic.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+  <h1>Bun venit, <span id="nume-medic">Dr. </span>!</h1>
+  <button id="logout-btn" class="btn btn-danger my-3">Logout</button>
+
+  <section class="mb-5">
+    <h2>Cereri de programare</h2>
+    <div id="cereri-programari" class="list-group">
+      <!-- aici se vor încărca programările pending -->
+    </div>
+  </section>
+
+  <section>
+    <h2>Consultațiile mele viitoare</h2>
+    <div id="consultatii-viitoare" class="list-group">
+      <!-- aici se vor încărca consultațiile acceptate -->
+    </div>
+  </section>
+</body>
+</html>

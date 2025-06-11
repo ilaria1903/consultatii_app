@@ -1,0 +1,2 @@
+module TimpLiberMedicHelper
+end

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pacient_id: MyString
+  medic_id: MyString
+  data_programare: 2025-05-03
+  ora_programare: 2025-05-03 17:36:44
+  status: MyString
+  motiv: MyText
+
+two:
+  pacient_id: MyString
+  medic_id: MyString
+  data_programare: 2025-05-03
+  ora_programare: 2025-05-03 17:36:44
+  status: MyString
+  motiv: MyText

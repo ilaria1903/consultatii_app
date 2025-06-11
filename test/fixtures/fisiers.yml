@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_chat: 1
+  id_utilizator: MyString
+  nume_fisier: MyString
+  file_url: MyText
+  file_type: MyString
+  upload_time: 2025-05-03 18:12:57
+
+two:
+  id_chat: 1
+  id_utilizator: MyString
+  nume_fisier: MyString
+  file_url: MyText
+  file_type: MyString
+  upload_time: 2025-05-03 18:12:57

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_video: 
+  id_consultatie: 1
+  url_video: MyText
+  video_inceput_la: 2025-05-03 17:55:25
+  video_incheiat_la: 2025-05-03 17:55:25
+  status_video: MyString
+
+two:
+  id_video: 
+  id_consultatie: 1
+  url_video: MyText
+  video_inceput_la: 2025-05-03 17:55:25
+  video_incheiat_la: 2025-05-03 17:55:25
+  status_video: MyString

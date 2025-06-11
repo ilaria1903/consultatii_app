@@ -1,0 +1,22 @@
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Bun venit, <span id="nume-utilizator">Utilizator</span>!</h1>
+
+    <button id="logout-btn" class="btn btn-danger mb-3">Logout</button>
+
+    <section class="mb-5">
+      <h2> Programarile mele</h2>
+      <div id="lista-programari" class="list-group"></div>
+     <button onclick="window.location.href = '/creeaza_programare.html'"> Creeaza programare</button>
+
+      <button onclick="window.location.href = '/profil.html'" class="btn btn-secondary mt-2"> Profil</button>
+    </section>
+
+    <section class="mb-5">
+      <h2> Consultatiile mele</h2>
+      <div id="lista-consultatii" class="list-group"></div>
+    </section>
+  </div>
+
+  <script src="/js/utilizator.js"></script>
+</body>

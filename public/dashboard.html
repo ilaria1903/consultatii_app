@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+    }
+    #info-utilizator {
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 8px 16px;
+    }
+    #mesaj {
+      color: red;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Dashboard utilizator</h2>
+  <div id="info-utilizator">
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Nume:</strong> <span id="nume"></span> <span id="prenume"></span></p>
+    <p><strong>Rol:</strong> <span id="rol"></span></p>
+  </div>
+
+  <button onclick="logout()">Logout</button>
+  <div id="mesaj"></div>
+
+  <script>
+    const token = localStorage.getItem('token');
+    const mesajEl = document.getElementById('mesaj');
+
+    if (!token) {
+      mesajEl.innerText = "Nu ești autentificat. Redirecționare...";
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 1500);
+    } else {
+      fetch("http://localhost:3000/utilizator_profil", {
+        headers: {
+          "Authorization": "Bearer " + token
+        }
+      })
+      .then(response => {
+        if (!response.ok) throw new Error("Token invalid sau expirat");
+        return response.json();
+      })
+      .then(data => {
+        document.getElementById('email').innerText = data.email;
+        document.getElementById('nume').innerText = data.nume;
+        document.getElementById('prenume').innerText = data.prenume;
+        document.getElementById('rol').innerText = data.rol;
+      })
+      .catch(error => {
+        mesajEl.innerText = error.message;
+        localStorage.removeItem('token');
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 1500);
+      });
+    }
+
+    function logout() {
+      localStorage.removeItem('token');
+      alert("Delogat cu succes!");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
