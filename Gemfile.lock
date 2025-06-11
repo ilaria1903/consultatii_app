@@ -386,6 +386,7 @@ DEPENDENCIES
   jbuilder
   jwt
   kamal
+  net-pop (>= 0.1.1)
   pg
   propshaft
   puma (>= 5.0)
