@@ -305,58 +305,6 @@ bundle exec rspec --format progress --require spec_helper
 
 ---
 
-##  Deployment
-
-### Deploy to Heroku
-
-\`\`\`bash
-# Create Heroku app
-heroku create your-app-name
-
-# Set environment variables
-heroku config:set SECRET_KEY_BASE=your-secret-key
-heroku config:set JWT_SECRET=your-jwt-secret
-
-# Deploy
-git push heroku main
-
-# Run migrations on Heroku
-heroku run rails db:migrate
-\`\`\`
-
-### Deploy to Other Platforms
-
-Refer to the documentation of your hosting provider (AWS, DigitalOcean, Render, etc.) for deployment instructions.
-
----
-
-## 🐛 Troubleshooting
-
-### Issue: Database Connection Error
-\`\`\`bash
-# Check PostgreSQL is running
-psql --version
-
-# Verify database configuration in config/database.yml
-rails db:drop db:create db:migrate
-\`\`\`
-
-### Issue: Gem Installation Error
-\`\`\`bash
-# Clear bundler cache
-bundle clean
-
-# Reinstall gems
-bundle install
-\`\`\`
-
-### Issue: Port 3000 Already in Use
-\`\`\`bash
-# Run on different port
-rails s -p 3001
-\`\`\`
-
----
 
 ## 📚 Additional Resources
 
